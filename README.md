@@ -10,7 +10,7 @@ This repository provides the code for the paper CoFact: Dynamic Coordination of 
 > In this work, we propose CoFact, an adaptive inference-time mechanism that improves factual consistency by dynamically coordinating attention head behaviors.CoFact is plug-and-play compatible with mainstream LLM architectures and requires no additional supervision or model retraining.Experimental results across multiple standard factuality benchmarks demonstrate that CoFact consistently enhances factual accuracy while maintaining generation fluency and inference efficiency.
 
 
-   ![输入图片说明](/imgs/2025-05-15/v6k4veVPsViCVWn0.png)
+
 
 
 # Table of Contents
@@ -87,7 +87,7 @@ For further details, please refer to
 Tips:ALL INFORMATION ABOUT YOUR FINE-TURN JOB CAN BE FOUND IN *https://platform.openai.com/finetune* 
 
 ## Document introduction
-| `File`             | Introduction       |
+| File             | Introduction       |
 |------------------------------|----------------------------------------------------------------------------|
 | `CoFact-test.py`  | You can try our method by running this file with different problems. 
 | `CoFact with generation.py`  | Execute the main generation task in this file.                             |
