@@ -9,7 +9,7 @@ This repository provides the code for the paper CoFact: Dynamic Coordination of 
 > In this work, we propose CoFact, an adaptive inference-time mechanism that improves factual consistency by dynamically coordinating attention head behaviors.CoFact is plug-and-play compatible with mainstream LLM architectures and requires no additional supervision or model retraining.Experimental results across multiple standard factuality benchmarks demonstrate that CoFact consistently enhances factual accuracy while maintaining generation fluency and inference efficiency.
 
 
-
+![Image](https://github.com/user-attachments/assets/9041a7f6-cb25-45d6-97eb-2dbe5a6b0a82)
 
 
 
