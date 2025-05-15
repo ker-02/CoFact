@@ -1,5 +1,3 @@
-# CoFact
-
 # CoFact: Dynamic Coordination of Attention Heads for Improving Factual Consistency in LLMs
 
 This repository provides the code for the paper CoFact: Dynamic Coordination of Attention Heads for Improving Factual Consistency in LLMs. It shows how to apply our method to LLMs.
