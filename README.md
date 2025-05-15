@@ -23,13 +23,17 @@ This repository provides the code for the paper CoFact: Dynamic Coordination of 
 ```
 conda create --name myenv python=3.9
 conda activate myenv
-pip install git+https://github.com/davidbau/baukit
 pip install transformers==4.49.0
 pip install pandas
 pip install torch
 pip install nbformat
 pip install datasets
 pip install einops
+pip install openai
+pip install scikit-learn
+t5==0.9.4
+pip install git+https://github.com/sylinrl/TruthfulQA.git
+pip install git+https://github.com/davidbau/baukit
 ```
 
 ## TruthfulQA Evaluation
