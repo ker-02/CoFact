@@ -89,7 +89,10 @@ job = client.fine_tuning.jobs.create(
 ```
 For further details, please refer to 
 *https://platform.openai.com/docs/api-reference/fine-tuning/create*
+
+
 Tips:ALL INFORMATION ABOUT YOUR FINE-TURN JOB CAN BE FOUND IN *https://platform.openai.com/finetune* 
+
 
 ## Document introduction
 | File             | Introduction       |
