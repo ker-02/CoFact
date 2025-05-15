@@ -12,6 +12,7 @@ This repository provides the code for the paper CoFact: Dynamic Coordination of 
 
 
 
+
 # Table of Contents
 
  1. [Setup environment](#setup-environment)
@@ -27,7 +28,8 @@ pip install transformers==4.49.0
 pip install pandas
 pip install torch
 pip install nbformat
-pip install datasets 
+pip install datasets
+pip install einops
 ```
 
 ## TruthfulQA Evaluation
