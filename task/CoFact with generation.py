@@ -171,7 +171,7 @@ if __name__ == "__main__":
                             handle.layer_idx = layer_idx
                             hook_handles.append(handle)
                 except Exception as e:
-                    print(f"应用干预时出错: {e}")
+                    print(f"wrong: {e}")
             
             with torch.no_grad():
                 outputs = model(input_ids=generated, output_attentions=True, output_hidden_states=True)
