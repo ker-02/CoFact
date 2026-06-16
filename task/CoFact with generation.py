@@ -55,7 +55,7 @@ def Redundancy(attention_layers_attention_matrix):
 
         layers_heads_similarity = []
         for i in range(num_heads):
-            # 排除自身相似度
+
             single_heads_similarity = torch.cat([similarity_matrix[i, :i], similarity_matrix[i, i + 1:]])
             mean_similarity = single_heads_similarity.mean()
             layers_heads_similarity.append(mean_similarity)
