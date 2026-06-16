@@ -23,11 +23,11 @@ def load_csv(file_path, is_gzip=False):
     return list_data
 
 def InforGain(attention_layers_outputs, heads_num):
-    #逐层取出输出并转换为注意力头
-    all_layers_all_heads_distance = [] #存放所有层中的所有注意力头的信息增益数据
+
+    all_layers_all_heads_distance = [] 
     for layer_output in attention_layers_outputs:
         layer_output_head_wise = layer_output[:,-1][0].reshape(heads_num, -1)
-        layer_heads_distance = []  #存放一个层中所有注意力头的信息增益数据
+        layer_heads_distance = [] 
         for i in range(len(layer_output_head_wise)):
             distance = 0 - torch.norm(layer_output_head_wise[i], p=2)
             layer_heads_distance.append(distance)
@@ -36,23 +36,23 @@ def InforGain(attention_layers_outputs, heads_num):
 
 
 def Redundancy(attention_layers_attention_matrix):
-    all_layers_all_heads_similarity = []  # 存放所有层的冗余相似度信息
+    all_layers_all_heads_similarity = [] 
     for layer_attention_matrix in attention_layers_attention_matrix:
-        # 提取所有注意力头的注意力矩阵
-        heads_attention = layer_attention_matrix[0]  # 形状为 [32, 11, 11]
+
+        heads_attention = layer_attention_matrix[0]  
         num_heads = heads_attention.shape[0]
 
-        # 展平每个头的注意力矩阵为一维向量，形状 [32, 121]
+   
         flattened_heads = heads_attention.view(num_heads, -1)
 
-        # 计算所有头之间的余弦相似度矩阵，形状 [32, 32]
+ 
         similarity_matrix = F.cosine_similarity(
-            flattened_heads.unsqueeze(1),  # 形状 [32, 1, 121]
-            flattened_heads.unsqueeze(0),  # 形状 [1, 32, 121]
+            flattened_heads.unsqueeze(1), 
+            flattened_heads.unsqueeze(0),  
             dim=-1
         )
 
-        # 逐对比较并计算平均值，保持原始逻辑
+
         layers_heads_similarity = []
         for i in range(num_heads):
             # 排除自身相似度
@@ -62,7 +62,7 @@ def Redundancy(attention_layers_attention_matrix):
 
         all_layers_all_heads_similarity.append(torch.tensor(layers_heads_similarity))
 
-    return torch.stack(all_layers_all_heads_similarity)  # 形状 [num_layers, num_heads]
+    return torch.stack(all_layers_all_heads_similarity)  
 
 def modify_attention_output(weights,heads_num):
     def hook(module,inputs,outputs):
@@ -109,7 +109,7 @@ def build_prompt(input_text):
 
 
 def save_to_excel(results, output_file):
-    # Create DataFrame
+
     df = pd.DataFrame(results)
     df.to_excel(output_file, index=False)
     print(f"Results saved to {output_file}")
